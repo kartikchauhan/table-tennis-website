@@ -148,49 +148,45 @@
 
 </div>
 <div id="page-content">
-      <div style="padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 30px;">
+      <div style="padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 30px; font-family: arial;">
     <div style="text-align: center;">
-      <h2>18th Ajay kumar Garg Memorial Open Table Tennis Tournament</h2>
-      <h3>Entry Form</h3>
+      <h4>18th Ajay kumar Garg Memorial Open Table Tennis Tournament</h4>
+      <h5>Entry Form</h5>
     </div>
-    <!-- Top Left Line -->
-    <div style="width: 30%; float: left;">
-      <div style="list-style-type: none;">
-        Name of Institute
-        Address
+    <!-- Top Left Line -->    
+      <ul style="list-style-type:none; margin-left:0px;">
+        <li id="hidden_institution_name">Name of Institute: </li>
+        <li id="hidden_address">Address: </li>
       </div>
-    </div>
-    <div style="width: 70%; float: left;">
-      <div class="hidden_name_of_institute" id="hidden_institution_name">Institute</div>
-      <div class="hidden_address" id="hidden_address">Address</div>
-    </div>
-    <div>
-      <h3>TEAM MEMBER Team Champianship</h3>
-    </div>
-    <div style="width: 50%; float: left;">
-      <h4 style="text-align: center;">MEN (TEAM A)</h4>
+        
+      <h5 style="text-align: center; font-family: arial;">TEAM MEMBERS - Team Champianship</h5>
 
-      <ol style="text-align: center" id="hidden_men_team_A_add_list">        
-      </ol>
-    </div>
-    <div style="width: 50%; float: left;">
-      <h4 style="text-align: center;">WOMEN (TEAM A)</h4>
-      <ol style="text-align: center" id="hidden_women_team_A_add_list">
-      </ol>
-    </div>
-    <div style="width: 50%; float: left; padding-top: 100px;">
-      <h4 style="text-align: center;">MEN (TEAM B)</h4>
-      <ol style="text-align: center" id="hidden_men_team_B_add_list">
-      </ol>
-    </div>
-    <div style="width: 50%; float: left; padding-top: 100px;">
-      <h4 style="text-align: center;">WOMEN (TEAM B)</h4>
-      <ol style="text-align: center" id="hidden_women_team_B_add_list">
-      </ol>
+    <div style="margin-left:0px; font-family: arial;">
+      <h6>MEN (TEAM A)</h6>
+        <ol style="font-size:11px;" id="hidden_men_team_A_add_list">        
+        </ol>
     </div>
 
-    <h3 style="text-transform: uppercase; text-align: center;">Names for Indivisual Events</h3>
-    <table style="width: 100%;" cellspacing="0" cellpadding="0" id="hidden_names_individual_events">
+    <div style="margin-left:0px; font-family: arial;">
+      <h6>WOMEN (TEAM A)</h6>
+        <ol style="font-size:11px;" id="hidden_women_team_A_add_list">
+        </ol>
+    </div>
+
+    <div style="margin-right: 0px; font-family: arial;">
+      <h6>MEN (TEAM B)</h6>
+        <ol style="font-size:11px;" id="hidden_men_team_B_add_list">
+        </ol>
+    </div>
+
+    <div style="margin-right: 0px; font-family: arial;">
+      <h6>WOMEN (TEAM B)</h6>
+        <ol style="font-size:11px;" id="hidden_women_team_B_add_list">
+        </ol>
+    </div>
+
+    <h5 style="text-transform: uppercase; text-align: center; font-family: arial;">Names for Indivisual Events</h5>
+    <table style="width: 100%; font-family: arial;" cellspacing="0" cellpadding="0" id="hidden_names_individual_events">
       <thead>
         <tr style="font-weight: bold; ">
           <th style="width: 25%; border: 2px solid #000; ">S. No.</th>
@@ -239,9 +235,9 @@
 
         $('#store_in_hidden_form').on('click', function(){
 
-            $('#hidden_institution_name').html($('#institution_name').val());
+            $('#hidden_institution_name').append($('#institution_name').val());
 
-            $('#hidden_address').html($('#address').val());
+            $('#hidden_address').append($('#address').val());
 
             $('#men_team_A_add_list').find('input[type=text]').each(function(){
               list_value = $(this).val();              
@@ -264,7 +260,7 @@
             });
 
             $('#names_individual_events').find('tbody').children().each(function(){
-              obj = $('#hidden_names_individual_events').find('tbody').append('<tr style="font-weight: bold;"></tr>');
+              obj = $('#hidden_names_individual_events').find('tbody').append('<tr></tr>');
               $(this).find('input[type=text]').each(function(){
                 obj.append('<td style="width: 25%; border: 2px solid #000;">' + $(this).val() + '</td>');
               });
